@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/header_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="36dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Converter" />
+
+
+        <ImageView
+            android:id="@+id/naira_icon_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/currency_to_convert_il"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/currency_to_convert_il"
+            app:srcCompat="@drawable/naira_icon" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/currency_to_convert_il"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/currency_to_convert_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/naira_icon_holder"
+            app:layout_constraintTop_toBottomOf="@id/header_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/currency_to_convert_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/service_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/select_conversion_text"
+            app:layout_constraintStart_toStartOf="@id/currency_to_convert_il"
+            app:layout_constraintTop_toBottomOf="@id/currency_to_convert_il" />
+
+        <RadioGroup
+            android:id="@+id/currency_conversion_options"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/dollar_conversion_option"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/currency_to_convert_il"
+            app:layout_constraintStart_toStartOf="@id/service_question"
+            app:layout_constraintTop_toBottomOf="@id/service_question">
+
+            <RadioButton
+                android:id="@+id/dollar_conversion_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dollar_text" />
+
+            <RadioButton
+                android:id="@+id/pounds_conversion_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pounds_text" />
+
+            <RadioButton
+                android:id="@+id/euro_conversion_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/euro_text" />
+
+            <RadioButton
+                android:id="@+id/bitcoin_conversion_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bitcoin_text" />
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/icon_round_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/round_up_switch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/round_up_switch"
+            app:srcCompat="@drawable/round_odd_icon" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/round_up_switch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/round_up_text"
+            app:layout_constraintEnd_toEndOf="@+id/currency_to_convert_il"
+            app:layout_constraintStart_toStartOf="@id/currency_conversion_options"
+            app:layout_constraintTop_toBottomOf="@id/currency_conversion_options" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/convert_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:icon="@drawable/convert_icon"
+            android:text="@string/convert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintTop_toBottomOf="@id/round_up_switch" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/conversion_result_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/convert_button"
+            tools:text="Amount: $10" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="convert">Convert currency</string>
+    <string name="currency_to_convert_hint">Enter amount here</string>
+    <string name="select_conversion_text">Select currency you want to convert to:</string>
+    <string name="dollar_text">Dollar</string>
+    <string name="pounds_text">Pounds</string>
+    <string name="euro_text">Euro</string>
+    <string name="bitcoin_text">Bitcoin</string>
+    <string name="round_up_text">Round off currency value</string>
+    <string name="conversion_result_text">Converted Amount is %s%s at the rate of %s</string>
+</resources>
