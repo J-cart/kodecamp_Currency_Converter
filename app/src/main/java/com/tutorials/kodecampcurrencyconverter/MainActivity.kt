@@ -56,15 +56,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            var newValue = it * currencyToConvertToValue
+            val newValue =  it / currencyToConvertToValue
+            var newValueString = newValue.toString()
+
             if (binding.roundUpSwitch.isChecked) {
-                newValue = kotlin.math.ceil(newValue)
+                newValueString = "%.2f".format(newValue)
             }
 
             binding.conversionResultText.text = getString(
                 R.string.conversion_result_text,
                 currencyToConvertToSymbol,
-                newValue.toString(),
+                newValueString,
                 currencyToConvertToValue.toString()
             )
         } ?: emptyStateValue()
